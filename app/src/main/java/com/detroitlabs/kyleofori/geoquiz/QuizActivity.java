@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 public class QuizActivity extends Activity {
@@ -22,15 +23,18 @@ public class QuizActivity extends Activity {
         mTrueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Between the parentheses is an anonymous class that implements the listener
-                //It will need to implement the onClick(View) method for OnClickListener, too
+                Toast.makeText(QuizActivity.this,
+                        R.string.correct_toast,
+                        Toast.LENGTH_SHORT).show();
             }
         });
         mFalseButton = (Button)findViewById(R.id.false_button);
         mFalseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Same situation
+                Toast.makeText(QuizActivity.this,
+                        R.string.incorrect_toast,
+                        Toast.LENGTH_SHORT).show();
             }
         });
     }
