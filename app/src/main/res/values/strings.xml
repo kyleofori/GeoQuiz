@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GeoQuiz</string>
+    <string name="question_text">Detroit is the capital city of Michigan.</string>
+    <string name="true_button">Settings</string>
+    <string name="false_button">Settings</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
