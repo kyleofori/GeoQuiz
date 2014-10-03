@@ -7,7 +7,11 @@
     <string name="action_settings">Settings</string>
     <string name="question_Michigan">Detroit is the capital city of Michigan.</string>
     <string name="question_Ontario">Windsor is the most populous city in Ontario.</string>
-    <string name="question_Texas">Texas has the most top-ten cities (population-wise) in the USA.</string>
+    <string name="question_Texas">Texas is the largest state in the USA.</string>
+    <string name="question_Hawaii">Hawaii is the state that was most recently admitted to the
+        Union.</string>
+    <string name="question_SCarolina">South Carolina was the first state to ratify the Articles
+        of Confederation.</string>
     <string name="question_Arizona">Phoenix is the most populous capital city in the USA.</string>
     <string name="correct_toast">Correct!</string>
     <string name="incorrect_toast">Incorrect.</string>
