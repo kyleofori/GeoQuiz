@@ -23,6 +23,8 @@ public class QuizActivity extends Activity {
             new TrueFalse(R.string.question_Michigan, false),
             new TrueFalse(R.string.question_Ontario, false),
             new TrueFalse(R.string.question_Texas, true),
+            new TrueFalse(R.string.question_Hawaii, true),
+            new TrueFalse(R.string.question_SCarolina, true)
     };
 
     private int mCurrentIndex = 0;
@@ -92,7 +94,7 @@ public class QuizActivity extends Activity {
         mPreviousButton.setOnClickListener(new View.OnClickListener() {
             @Override
         public void onClick(View view) {
-                mCurrentIndex = (mCurrentIndex - 1) % mQuestionBank.length;
+                mCurrentIndex = (mCurrentIndex + mQuestionBank.length - 1) % mQuestionBank.length;
                 updateQuestion();
             }
         });
