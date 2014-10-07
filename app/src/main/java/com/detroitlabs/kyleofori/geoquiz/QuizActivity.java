@@ -48,10 +48,16 @@ public class QuizActivity extends Activity {
 
         int messageResId = 0;
 
-        if (userPressedTrue == answerIsTrue) {
-            messageResId = R.string.correct_toast;
-        } else {
-            messageResId = R.string.incorrect_toast;
+        if(mIsCheat) {
+            messageResId = R.string.judgment_toast;
+        }
+        else
+        {
+            if (userPressedTrue == answerIsTrue) {
+                messageResId = R.string.correct_toast;
+            } else {
+                messageResId = R.string.incorrect_toast;
+            }
         }
 
         Toast.makeText(this, messageResId, Toast.LENGTH_SHORT)
@@ -106,6 +112,7 @@ public class QuizActivity extends Activity {
             @Override
             public void onClick(View view) {
                 mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+                mIsCheat = false;
                 updateQuestion();
             }
         });
@@ -121,6 +128,7 @@ public class QuizActivity extends Activity {
             @Override
         public void onClick(View view) {
                 mCurrentIndex = (mCurrentIndex + mQuestionBank.length - 1) % mQuestionBank.length;
+                mIsCheat = false;
                 updateQuestion();
             }
         });
@@ -190,6 +198,6 @@ public class QuizActivity extends Activity {
         }
         //mIsCheat should be set to result from CheatActivity
         mIsCheat = data.getBooleanExtra(CheatActivity.EXTRA_ANSWER_SHOWN, false);
-        
+
     }
 }
