@@ -93,6 +93,8 @@ public class QuizActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(QuizActivity.this, CheatActivity.class);
+                boolean answerIsTrue = mQuestionBank[mCurrentIndex].isTrueQuestion();
+                i.putExtra(CheatActivity.EXTRA_ANSWER_IS_TRUE, answerIsTrue);
                 startActivity(i);
             }
         });
