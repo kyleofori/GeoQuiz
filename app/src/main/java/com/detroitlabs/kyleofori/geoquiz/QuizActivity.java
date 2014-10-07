@@ -36,6 +36,8 @@ public class QuizActivity extends Activity {
 
     private int mCurrentIndex = 0;
 
+    private boolean mIsCheat;
+
     private void updateQuestion() {
         int question = mQuestionBank[mCurrentIndex].getQuestion();
         mQuestionTextView.setText(question);
@@ -179,5 +181,15 @@ public class QuizActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (data==null) {
+            return;
+        }
+        //mIsCheat should be set to result from CheatActivity
+        mIsCheat = data.getBooleanExtra(CheatActivity.EXTRA_ANSWER_SHOWN, false);
+        
     }
 }
