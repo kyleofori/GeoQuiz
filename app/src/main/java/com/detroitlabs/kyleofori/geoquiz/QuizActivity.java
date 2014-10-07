@@ -93,9 +93,11 @@ public class QuizActivity extends Activity {
             }
         });
 
+        if(savedInstanceState != null) {
+            mCurrentIndex = savedInstanceState.getInt(KEY_INDEX, 0);
+        }
+
         updateQuestion();
-
-
 
         mPreviousButton = (ImageButton)findViewById(R.id.previous_button);
         mPreviousButton.setOnClickListener(new View.OnClickListener() {
@@ -114,7 +116,7 @@ public class QuizActivity extends Activity {
         Log.i(TAG, "onSaveInstanceState");
         savedInstanceState.putInt(KEY_INDEX, mCurrentIndex);
     }
-    
+
     @Override
     public void onStart() {
         super.onStart();
