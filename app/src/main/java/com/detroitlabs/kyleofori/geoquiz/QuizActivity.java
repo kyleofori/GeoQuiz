@@ -19,7 +19,8 @@ public class QuizActivity extends Activity {
     private ImageButton mPreviousButton;
     private TextView mQuestionTextView;
 
-    public static final String TAG = "QuizActivity";
+    private static final String TAG = "QuizActivity";
+    private static final String KEY_INDEX = "index";
 
     private TrueFalse[] mQuestionBank = new TrueFalse[] {
             new TrueFalse(R.string.question_Arizona, true),
@@ -94,6 +95,8 @@ public class QuizActivity extends Activity {
 
         updateQuestion();
 
+
+
         mPreviousButton = (ImageButton)findViewById(R.id.previous_button);
         mPreviousButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,6 +108,13 @@ public class QuizActivity extends Activity {
 
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        Log.i(TAG, "onSaveInstanceState");
+        savedInstanceState.putInt(KEY_INDEX, mCurrentIndex);
+    }
+    
     @Override
     public void onStart() {
         super.onStart();
